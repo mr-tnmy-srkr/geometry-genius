@@ -109,7 +109,7 @@ function addToCalculationEntry(areaType, area) {
   p.classList.add('my-4');
   p.innerHTML = `${count + 1}. ${areaType} ${area} cm <sup>2</sup> <br>
     <button class = 'btn btn-sm btn-success'>Convert</button>`;
-    if(count == 10){
+    if(count == 20){
         return;
     }
   calculationEntry.appendChild(p);
