@@ -5,14 +5,12 @@ function calculateTriangleArea() {
   const baseField = document.getElementById("triangle-base");
   const baseValueText = baseField.value;
   const base = parseFloat(baseValueText);
-  console.log(base);
 
   // get triangle height value
 
   const heightField = document.getElementById("triangle-height");
   const heightValueText = heightField.value;
   const height = parseFloat(heightValueText);
-  console.log(height);
 
   if (isNaN(height) || isNaN(base)) {
     alert("please insert a number");
@@ -20,7 +18,6 @@ function calculateTriangleArea() {
   }
 
   const area = (0.5 * base * height).toFixed(2);
-  console.log(area);
 
   // show triangle area
   const areaSpan = document.getElementById("triangle-area");
@@ -37,7 +34,6 @@ function calculateRectangleArea() {
   const lengthField = document.getElementById("rectangle-length");
   const lengthValueText = lengthField.value;
   const length = parseFloat(lengthValueText);
-  console.log(length);
 
   if (isNaN(width) || isNaN(length)) {
     alert("please insert a number");
@@ -45,7 +41,6 @@ function calculateRectangleArea() {
   }
 
   const area = (width * length).toFixed(2);
-  console.log(area);
 
   const areaSpan = document.getElementById("rectangle-area");
   areaSpan.innerText = area;
@@ -99,28 +94,22 @@ function setElementInnerText(elementId, area) {
 
 //add to calculation entry
 function addToCalculationEntry(areaType, area) {
-  console.log("first");
   const calculationEntry = document.getElementById("calculation-entry");
   const count = calculationEntry.childElementCount;
 
   const p = document.createElement("p");
   //   p.setAttribute("class",'my-4')
   //   p.className = 'my-4'
-  p.classList.add('my-4');
+  p.classList.add("my-4");
   p.innerHTML = `${count + 1}. ${areaType} ${area} cm <sup>2</sup> <br>
-<<<<<<< HEAD
-    <button onclick = "convertToMeter()" id='convert' class = 'btn btn-sm btn-success normal-case'>Convert to m<sup>2</sup></button>`;
-=======
-    <button class = 'btn btn-sm btn-success'>Convert</button>`;
->>>>>>> 032f2f18a1593e332b91b1d293fe5ac5e5d708e1
-    if(count == 20){
-        return;
-    }
+    <button onclick = "convertToMeter(this)" id='convert' class = 'btn btn-sm btn-success normal-case'>Convert to m<sup>2</sup></button>`;
+  if (count == 20) {
+    return;
+  }
   calculationEntry.appendChild(p);
 }
-
-function convertToMeter(){
- const convertBtn = document.getElementById('convert');
- const setConvertValue = (convertBtn.parentElement.innerText.split(" ")[2]) / 100;
-convertBtn.innerHTML = `${setConvertValue} m<sup>2</sup>`
+// convertToMeter
+function convertToMeter(data) {
+   const setConvertValue = ((data.parentElement.innerText.split(" ")[2]) / 100).toFixed(2);
+  data.innerHTML = `${setConvertValue} m<sup>2</sup>`
 }
