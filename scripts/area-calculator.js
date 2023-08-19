@@ -108,9 +108,15 @@ function addToCalculationEntry(areaType, area) {
   //   p.className = 'my-4'
   p.classList.add('my-4');
   p.innerHTML = `${count + 1}. ${areaType} ${area} cm <sup>2</sup> <br>
-    <button class = 'btn btn-sm btn-success'>Convert</button>`;
-    if(count == 10){
+    <button onclick = "convertToMeter()" id='convert' class = 'btn btn-sm btn-success normal-case'>Convert to m<sup>2</sup></button>`;
+    if(count == 20){
         return;
     }
   calculationEntry.appendChild(p);
+}
+
+function convertToMeter(){
+ const convertBtn = document.getElementById('convert');
+ const setConvertValue = (convertBtn.parentElement.innerText.split(" ")[2]) / 100;
+convertBtn.innerHTML = `${setConvertValue} m<sup>2</sup>`
 }
