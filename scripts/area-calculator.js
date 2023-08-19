@@ -110,6 +110,6 @@ function addToCalculationEntry(areaType, area) {
 }
 // convertToMeter
 function convertToMeter(data) {
-   const setConvertValue = ((data.parentElement.innerText.split(" ")[2]) / 100).toFixed(2);
+   const setConvertValue = ((data.parentElement.innerText.split(" ")[2]) / 10000).toFixed(4);
   data.innerHTML = `${setConvertValue} m<sup>2</sup>`
 }
