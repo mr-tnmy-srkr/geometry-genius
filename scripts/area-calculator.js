@@ -108,7 +108,11 @@ function addToCalculationEntry(areaType, area) {
   //   p.className = 'my-4'
   p.classList.add('my-4');
   p.innerHTML = `${count + 1}. ${areaType} ${area} cm <sup>2</sup> <br>
+<<<<<<< HEAD
     <button onclick = "convertToMeter()" id='convert' class = 'btn btn-sm btn-success normal-case'>Convert to m<sup>2</sup></button>`;
+=======
+    <button class = 'btn btn-sm btn-success'>Convert</button>`;
+>>>>>>> 032f2f18a1593e332b91b1d293fe5ac5e5d708e1
     if(count == 20){
         return;
     }
